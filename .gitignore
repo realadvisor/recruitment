@@ -1,0 +1,12 @@
+.vs
+.idea
+__generated__
+build
+node_modules
+docker-compose.override.yml
+npm-error.log*
+npm-debug.log*
+yarn-error.log*
+yarn-debug.log*
+lerna-debug.log*
+backup.sql

@@ -1,0 +1,270 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`it can get right schema even if it encoded 1`] = `
+"
+    <a href=\\"tel:hello\\">Hax</a>
+  "
+`;
+
+exports[`it can get right schema even if it encoded 2`] = `
+"
+    <a href=\\"tel:hello\\">Hax</a>
+  "
+`;
+
+exports[`it can get wrong schema even if it encoded 1`] = `
+"
+    <a>Hax</a>
+  "
+`;
+
+exports[`it can get wrong schema even if it encoded 2`] = `
+"
+    <a>Hax</a>
+  "
+`;
+
+exports[`it encodes '"><& in attributes 1`] = `
+"
+    <a test=\\"&#x27;&amp;&gt;&lt;\\"></a>
+  "
+`;
+
+exports[`it encodes '"><& in attributes 2`] = `
+"
+    <a test=\\"a&amp;b\\"></a>
+  "
+`;
+
+exports[`it fixes non wrapped with quotes attributes 1`] = `
+"
+    <a test=\\"hello\\"></a>
+  "
+`;
+
+exports[`it not break tags because of < > in attributes 1`] = `
+"
+    <a test=\\"hey&lt;hey\\">hello</a>
+  "
+`;
+
+exports[`it not break tags because of < > in attributes 2`] = `
+"
+    <a test=\\"hey&gt;hey\\">hello</a>
+  "
+`;
+
+exports[`it not break tags because of < > in attributes 3`] = `
+"
+    <a test=\\"&lt;hey&gt;hey&lt;/hey&gt;\\">hello</a>
+  "
+`;
+
+exports[`it not break tags because of < > in attributes 4`] = `
+"
+    <a test=\\"hey&lt;hey\\">hello</a>
+  "
+`;
+
+exports[`it not break tags because of < > in attributes 5`] = `
+"
+    <a test=\\"hey&gt;hey\\">hello</a>
+  "
+`;
+
+exports[`it not break tags because of < > in attributes 6`] = `
+"
+    <a test=\\"&lt;hey&gt;hey&lt;/hey&gt;\\">hello</a>
+  "
+`;
+
+exports[`it not encodes non ascii chars in attributes 1`] = `
+"
+    <a test=\\"привет мир\\"></a>
+  "
+`;
+
+exports[`it preserves formaction,href,xlink:href attributes with schemas http,https,mailto,tel,no schema 1`] = `
+"
+    <a href=\\"tel:hello/world\\">hello</a>
+  "
+`;
+
+exports[`it preserves formaction,href,xlink:href attributes with schemas http,https,mailto,tel,no schema 2`] = `
+"
+    <a href=\\"mailto:hello/world\\">hello</a>
+  "
+`;
+
+exports[`it preserves formaction,href,xlink:href attributes with schemas http,https,mailto,tel,no schema 3`] = `
+"
+    <a href=\\"/hello/world\\">hello</a>
+  "
+`;
+
+exports[`it preserves formaction,href,xlink:href attributes with schemas http,https,mailto,tel,no schema 4`] = `
+"
+    <a href=\\"http://hello/world\\">hello</a>
+  "
+`;
+
+exports[`it preserves formaction,href,xlink:href attributes with schemas http,https,mailto,tel,no schema 5`] = `
+"
+    <a href=\\"https://hello/world\\">hello</a>
+  "
+`;
+
+exports[`it restores html closing tags 1`] = `
+"
+    <b><a><a><strong>hello</strong></a></a></b>
+    <b><a><a><strong>hello</strong></a></a></b>
+  "
+`;
+
+exports[`it restores html closing tags 2`] = `
+"
+    <b><a><a><strong>hello
+  </strong></a></a></b>"
+`;
+
+exports[`it strips formaction,href,xlink:href attributes with schemas other than http,https,mailto,tel,no schema 1`] = `
+"
+    <a>hello</a>
+  "
+`;
+
+exports[`it strips formaction,href,xlink:href attributes with schemas other than http,https,mailto,tel,no schema 2`] = `
+"
+    <a>hello</a>
+  "
+`;
+
+exports[`it strips formaction,href,xlink:href attributes with schemas other than http,https,mailto,tel,no schema 3`] = `
+"
+    <a>hello</a>
+  "
+`;
+
+exports[`it strips formaction,href,xlink:href attributes with schemas other than http,https,mailto,tel,no schema 4`] = `
+"
+    <button>hello</button>
+  "
+`;
+
+exports[`it strips poster,repeat,pattern,srcset,on* attributes 1`] = `
+"
+    <test yes=\\"no\\" no=\\"yes\\">hello world</test>
+  "
+`;
+
+exports[`it strips poster,repeat,pattern,srcset,on* attributes 2`] = `
+"
+    <test yes=\\"no\\" no=\\"yes\\">hello world</test>
+  "
+`;
+
+exports[`it strips script style iframe object meta tags 1`] = `
+"
+    script
+    script
+    meta
+    style
+    iframe
+    object
+  "
+`;
+
+exports[`it strips tags not matched with [a-zA-Z]+\\w* (default options) 1`] = `
+"
+    hello world
+  "
+`;
+
+exports[`it strips tags not matched with [a-zA-Z]+\\w* (default options) 2`] = `
+"
+    <good>hello world</good>
+  "
+`;
+
+exports[`it understand " in rounded with ' in attributes 1`] = `
+"
+    <a test=\\"hey&quot;hey\\">hello</a>
+  "
+`;
+
+exports[`it understand ' in rounded with " in attributes 1`] = `
+"
+    <a test=\\"hey&#x27;hey\\">hello</a>
+  "
+`;
+
+exports[`it understand self closing tags 1`] = `
+"
+    <b></b><a test=\\"lala\\"></a>
+  "
+`;
+
+exports[`it works with broken tags 1`] = `
+"
+    <a script>hello world
+  </a>"
+`;
+
+exports[`it works with broken tags 2`] = `
+"
+    <a>hello world
+  </a>"
+`;
+
+exports[`it works with broken tags 3`] = `
+"
+    hello world
+  "
+`;
+
+exports[`it works with broken tags 4`] = `
+"
+    <e a a>hello world
+  </e>"
+`;
+
+exports[`it works with gt lt symbols inside tags 1`] = `
+"
+    <a>hello > world</a>
+  "
+`;
+
+exports[`it works with gt lt symbols inside tags 2`] = `
+"
+    <a>hello>world</a>
+  "
+`;
+
+exports[`it works with gt lt symbols inside tags 3`] = `
+"
+    <a>hello < world</a>
+  "
+`;
+
+exports[`it works with gt lt symbols inside tags 4`] = `
+"
+    <a>hello
+  </a>"
+`;
+
+exports[`something bad will somehow be sanitized 1`] = `
+"
+    <a script a=\\"&gt;\\" b=\\"&gt;\\">ddd</a>
+  <div hi=\\"игрушек&gt;игрушечники\\">ddd</div>
+  <div>игрушечники</div>
+  
+  world
+  <b><a href=\\"jopa\\"></a></b>
+  <div></div>
+  >c><b hi=\\"al&quot;ll lol\\" let=\\"me&amp;not\\">hello<a>popopopo</a></b>
+
+  
+  <a xlink:href=\\"hello\\">Hax</a>
+  <a>ddd</a>
+  "
+`;

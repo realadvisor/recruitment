@@ -1,0 +1,15 @@
+import { Link } from './Link';
+
+## Link component
+
+<Link href={{pathname: '/hello'}}>
+  <a>hello</a>
+</Link>
+<br />
+<Link href={{pathname: '/hello', query: {some: 'some'}}}>
+  <a>hello with query</a>
+</Link>
+<br />
+<Link href={'/hello'}>
+  <a>hello as string</a>
+</Link>

@@ -1,0 +1,14 @@
+generated.pathnames.json
+.next
+styleguide/build
+.functions
+.analyze
+.gcloudapp
+node_modules
+__generated__
+tools/schema.graphql
+*.log
+locales/de.js
+locales/en.js
+locales/fr.js
+icons/*.js

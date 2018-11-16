@@ -1,0 +1,13 @@
+{
+  "editor.formatOnSave": true,
+  "flow.useNPMPackagedFlow": true,
+  "javascript.format.enable": false,
+  "javascript.validate.enable": false,
+  "search.exclude": {
+    "**/build": true,
+    "**/node_modules": true,
+    "**/yarn.lock": true,
+    "**/__generated__": true
+  },
+  "typescript.tsdk": "./node_modules/typescript/lib"
+}

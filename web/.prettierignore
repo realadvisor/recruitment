@@ -1,0 +1,6 @@
+package.json
+*.log
+node_modules
+dist
+.vscode
+.docz

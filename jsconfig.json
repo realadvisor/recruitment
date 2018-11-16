@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "plugins": [
+      {
+        "name": "typescript-styled-plugin"
+      }
+    ]
+  },
+  "exclude": ["node_modules", "build"],
+  "include": ["./web/src", "./api/src"]
+}
