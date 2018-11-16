@@ -103,7 +103,7 @@ $ yarn db-migrate
 
 ![](https://res.realadvisor.ch/fetch//https://storage.googleapis.com/img-dev.realadvisor.ch/imjvhaxukv__property.png)
 
-![](https://res.realadvisor.ch/fetch//https://storage.googleapis.com/img-dev.realadvisor.ch/pdasimzcts__properties.png)
+![](https://res.realadvisor.ch/fetch//https://storage.googleapis.com/img-dev.realadvisor.ch/glbjottofx__properties.png)
 
 [react]: https://reactjs.org/
 [reactdocs]: https://reactjs.org/docs/
