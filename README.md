@@ -10,11 +10,7 @@ The top-level directly layout looks as follows:
 .
 ├── packages/                   # Shared components (modules) managed by Lerna
 ├── api/                        # GraphQL API gateway
-<<<<<<< HEAD
-├── web/                         # NextJS website
-=======
 ├── web/                        # NextJS website
->>>>>>> bc10bbde2b95d494c7bc9005a8d36fcb0fe57223
 ├── lerna.json                  # Lerna configuration
 └── package.json                # List of project dependencies
 ```
