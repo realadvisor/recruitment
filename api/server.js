@@ -5,6 +5,8 @@
 if (process.env.NODE_ENV === 'production') {
   // Launch the app directly in production environment
   require('source-map-support').install();
+  const cp = require('child_process');
+  cp.spawnSync('yarn', ['db-migrate'], { stdio: 'inherit' });
   require('./build/server');
 } else {
   // Otherwise, built it from source and launch
