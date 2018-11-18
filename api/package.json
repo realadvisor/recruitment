@@ -77,7 +77,7 @@
     "db-seed": "node scripts/db.js seed",
     "db-restore": "./scripts/db-restore.sh",
     "update-schema": "node scripts/update-schema.js",
-    "heroku-postbuild": "npm install yarn && yarn build",
+    "heroku-postbuild": "npm run-script build",
     "start": "node --icu-data-dir=`yarn -s run node-full-icu-path` ./server.js"
   }
 }
