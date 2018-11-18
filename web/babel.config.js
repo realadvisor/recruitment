@@ -1,5 +1,6 @@
 module.exports = {
   presets: [
+    'es2015',
     'next/babel',
     '@babel/flow',
     // process.env.NODE_ENV === 'test' && '@babel/env',
