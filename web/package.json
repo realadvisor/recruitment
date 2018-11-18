@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "CC-BY-4.0",
+  "engines": {
+    "yarn": "1.x"
+  },
   "dependencies": {
     "@material-ui/core": "^3.4.0",
     "@material-ui/lab": "^3.0.0-alpha.23",
@@ -117,7 +120,7 @@
     "node": "8"
   },
   "config": {
-    "API_ENDPOINT": "http://localhost:8080/graphql",
+    "API_ENDPOINT": "https://realadvisor-recruitment-api.herokuapp.com/graphql",
     "descr": [
       "SCRIPTS description",
       "test - pregenerate files and run tests",
@@ -133,6 +136,7 @@
     "test": "yarn relay && eslint ./ && flow && jest",
     "start": "API_ENDPOINT=$npm_package_config_API_ENDPOINT NODE_ENV=production node --icu-data-dir=`yarn -s run node-full-icu-path` server/index.js",
     "build": "yarn relay && next build",
+    "heroku-postbuild": "yarn build",
     "dev": "yarn relay && yarn dev:raw",
     "dev:raw": "API_ENDPOINT=$npm_package_config_API_ENDPOINT node --icu-data-dir=`yarn -s run node-full-icu-path` server/index.js",
     "relay": "relay-compiler --src . --schema ../api/schema.graphql",
