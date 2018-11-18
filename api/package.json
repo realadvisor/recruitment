@@ -79,7 +79,7 @@
     "db-seed": "node scripts/db.js seed",
     "db-restore": "./scripts/db-restore.sh",
     "update-schema": "node scripts/update-schema.js",
-    "heroku-db-migrate": "yarn install --production=false && knex migrate:latest",
+    "heroku-db-migrate": "yarn add @babel/core && knex migrate:latest",
     "heroku-postbuild": "yarn install --production=false && yarn build",
     "start": "node --icu-data-dir=`yarn -s run node-full-icu-path` ./server.js"
   }
