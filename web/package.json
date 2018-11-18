@@ -136,7 +136,7 @@
     "test": "yarn relay && eslint ./ && flow && jest",
     "start": "API_ENDPOINT=$npm_package_config_API_ENDPOINT NODE_ENV=production node --icu-data-dir=`yarn -s run node-full-icu-path` server/index.js",
     "build": "yarn relay && next build",
-    "heroku-postbuild": "yarn build",
+    "heroku-postbuild": "yarn install --production=false && yarn build",
     "dev": "yarn relay && yarn dev:raw",
     "dev:raw": "API_ENDPOINT=$npm_package_config_API_ENDPOINT node --icu-data-dir=`yarn -s run node-full-icu-path` server/index.js",
     "relay": "yarn update-schema && relay-compiler --src . --schema ./schema.graphql",
