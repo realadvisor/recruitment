@@ -4,7 +4,6 @@
   "main": "index.js",
   "license": "CC-BY-4.0",
   "engines": {
-    "node": "8",
     "yarn": "1.x"
   },
   "dependencies": {
