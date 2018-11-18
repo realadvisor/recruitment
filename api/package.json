@@ -80,7 +80,8 @@
     "db-restore": "./scripts/db-restore.sh",
     "update-schema": "node scripts/update-schema.js",
     "heroku-db-migrate": "yarn install --production=false --force && knex migrate:latest",
-    "heroku-postbuild": "yarn install --production=false && yarn build && yarn db-migrate",
+    "heroku-db-rollback": "yarn install --production=false --force && knex migrate:rollback",
+    "heroku-postbuild": "yarn install --production=false && yarn build",
     "start": "node --icu-data-dir=`yarn -s run node-full-icu-path` ./server.js"
   }
 }
