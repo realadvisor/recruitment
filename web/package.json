@@ -119,7 +119,8 @@
     }
   },
   "config": {
-    "API_ENDPOINT": "https://realadvisor-recruitment-api.herokuapp.com/graphql",
+    "API_PROD": "https://realadvisor-recruitment-api.herokuapp.com/graphql",
+    "API_DEV": "https://realadvisor-recruitment-api.herokuapp.com/graphql",
     "descr": [
       "SCRIPTS description",
       "test - pregenerate files and run tests",
@@ -132,15 +133,15 @@
     ]
   },
   "scripts": {
-    "update-schema": "get-graphql-schema $npm_package_config_API_ENDPOINT > schema.graphql",
     "test": "yarn relay && eslint ./ && flow && jest",
-    "start": "API_ENDPOINT=$npm_package_config_API_ENDPOINT NODE_ENV=production node --icu-data-dir=`yarn -s run node-full-icu-path` server/index.js",
-    "build": "yarn relay && next build",
+    "start": "API_ENDPOINT=$npm_package_config_API_PROD NODE_ENV=production node --icu-data-dir=`yarn -s run node-full-icu-path` server/index.js",
+    "build": "yarn relay:prod && next build",
     "heroku-prebuild": "yarn install --production=false",
     "heroku-postbuild": "yarn build",
-    "dev": "yarn relay && yarn dev:raw",
+    "dev": "yarn relay:dev && yarn dev:raw",
     "dev:raw": "API_ENDPOINT=$npm_package_config_API_ENDPOINT node --icu-data-dir=`yarn -s run node-full-icu-path` server/index.js",
-    "relay": "yarn update-schema && relay-compiler --src . --schema ./schema.graphql",
+    "relay:dev": "get-graphql-schema $npm_package_config_API_DEV > schema.graphql&& relay-compiler --src . --schema ./schema.graphql",
+    "relay:prod": "get-graphql-schema $npm_package_config_API_PROD > schema.graphql && relay-compiler --src . --schema ./schema.graphql",
     "relay:clean": "rimraf $TMPDIR/* && rimraf ./**/__generated__/*.graphql.js"
   }
 }
