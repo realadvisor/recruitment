@@ -133,7 +133,7 @@
     ]
   },
   "scripts": {
-    "test": "yarn relay && eslint ./ && flow && jest",
+    "test": "yarn relay:dev && eslint ./ && flow && jest",
     "start": "API_ENDPOINT=$npm_package_config_API_PROD NODE_ENV=production node --icu-data-dir=`yarn -s run node-full-icu-path` server/index.js",
     "build": "yarn relay:prod && next build",
     "heroku-prebuild": "yarn install --production=false",
