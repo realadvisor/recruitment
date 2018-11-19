@@ -4,6 +4,7 @@ import React from 'react';
 import { graphql } from 'react-relay';
 import { Flex } from '@rebass/grid/emotion';
 import Paper from '@material-ui/core/Paper';
+import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import { Link } from '../../controls/link';
 
@@ -57,14 +58,15 @@ export const Property = (props: Props) => {
               <PropertyUpsertLead>
                 {(/* use { mutate, mutating } to commit changes to the API */) => (
                   <>
-                    <Link href={{ pathname: '/properties' }}>
+                    <Typography variant="h6">Start here</Typography>
+                    <Link href={{ pathname: '/' }}>
                       <Button
-                        to="/properties"
+                        to="/"
                         color="primary"
                         variant="contained"
                         css={{ marginTop: 80 }}
                       >
-                        Back to properties
+                        Back to instructions
                       </Button>
                     </Link>
                   </>
