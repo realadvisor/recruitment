@@ -32,9 +32,9 @@ export default class MyDocument extends Document {
     const styles = extractCritical(initialProps.html);
     const muiCss = pageContext ? pageContext.sheetsRegistry.toString() : '';
 
-    if (ctx.res.statusCode < 200 || ctx.res.statusCode >= 400) {
-      return { ...initialProps, ...styles, muiCss, headTags };
-    }
+    // if (ctx.res.statusCode < 200 || ctx.res.statusCode >= 400) {
+    //   return { ...initialProps, ...styles, muiCss, headTags };
+    // }
 
     return {
       ...initialProps,

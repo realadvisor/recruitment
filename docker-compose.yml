@@ -1,0 +1,43 @@
+version: '3'
+
+services:
+  web:
+    build:
+      context: ./web
+    volumes:
+      - ./web:/app
+      - ./api:/api
+    ports:
+      - '3000:3000'
+    networks:
+      - default
+    links:
+      - api
+  api:
+    build:
+      context: ./api
+    volumes:
+      - ./api:/app
+    ports:
+      - '8080:8080'
+    networks:
+      - default
+    links:
+      - db
+  db:
+    image: postgres:9.6.9-alpine
+    volumes:
+      - db-data:/var/lib/postgresql/data
+      - ./api/postgres-initdb.sh:/docker-entrypoint-initdb.d/init-api.sh
+    expose:
+      - '5432'
+    networks:
+      - default
+
+volumes:
+  db-data:
+    driver: local
+
+networks:
+  default:
+    driver: bridge

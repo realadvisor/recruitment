@@ -10,10 +10,8 @@ if (process.env.NODE_ENV === 'production') {
   // Otherwise, built it from source and launch
   // on http://localhost:8080/ with "live reload"
   require('source-map-support').install();
-  const cp = require('child_process');
   const restart = require('restart');
   const build = require('./scripts/build');
-  cp.spawnSync('docker-compose', ['up', '-d'], { stdio: 'inherit' });
   build({
     watch: true,
     onComplete: () => restart('./build/server'),

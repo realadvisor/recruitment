@@ -11,7 +11,12 @@ import knex from 'knex';
 
 const db = knex({
   client: 'pg',
-  connection: {},
+  connection: {
+    host: process.env.PG_LISTINGS_HOST,
+    user: process.env.PG_LISTINGS_USER,
+    password: process.env.PG_LISTINGS_PASSWORD,
+    database: process.env.PG_LISTINGS_DATABASE,
+  },
   migrations: {
     tableName: 'migrations',
   },

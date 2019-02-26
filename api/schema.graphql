@@ -44,6 +44,9 @@ type Property implements Node {
   # The ID of an object
   id: ID!
   livingSurface: Float
+  landSurface: Float
+  numberOfRooms: Float
+  numberOfParkings: Int
   createdAt: DateTime
   updatedAt: DateTime
 }
@@ -75,6 +78,9 @@ input PropertyFilters {
 input PropertyInput {
   id: ID
   livingSurface: Float
+  landSurface: Float
+  numberOfRooms: Float
+  numberOfParkings: Int
 }
 
 type Query {
