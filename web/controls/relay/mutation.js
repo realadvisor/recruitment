@@ -88,12 +88,14 @@ export function createMutation<
               const rootField = getRootFieldName(environment, mutation);
 
               if (!rootField) {
+                console.log('root field with errors!')
                 return;
               }
 
               const payload = store.getRootField(rootField);
               if (!payload) {
                 // mutation contains errors
+                console.log('mutation commited with errors!')
                 return;
               }
 

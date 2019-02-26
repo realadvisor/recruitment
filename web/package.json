@@ -5,6 +5,7 @@
   "license": "CC-BY-4.0",
   "dependencies": {
     "@material-ui/core": "^3.4.0",
+    "@material-ui/icons": "^3.0.2",
     "@material-ui/lab": "^3.0.0-alpha.23",
     "@rebass/components": "^4.0.0-1",
     "@rebass/grid": "^6.0.0-4",
@@ -18,9 +19,11 @@
     "esm": "^3.0.82",
     "fast-memoize": "^2.5.1",
     "flow-remove-types": "^1.2.3",
+    "formik": "^1.5.1",
     "full-icu": "^1.2.1",
     "i18next": "^11.5.0",
     "jss": "^9.8.7",
+    "momentjs": "^2.0.0",
     "next": "^7.0.1",
     "path-to-regexp": "^2.2.1",
     "polished": "^2.0.3",
@@ -117,7 +120,6 @@
     "node": "8"
   },
   "config": {
-    "API_ENDPOINT": "http://localhost:8080/graphql",
     "descr": [
       "SCRIPTS description",
       "test - pregenerate files and run tests",
@@ -131,11 +133,11 @@
   },
   "scripts": {
     "test": "yarn relay && eslint ./ && flow && jest",
-    "start": "API_ENDPOINT=$npm_package_config_API_ENDPOINT NODE_ENV=production node --icu-data-dir=`yarn -s run node-full-icu-path` server/index.js",
+    "start": "NODE_ENV=production node server/index.js",
     "build": "yarn relay && next build",
     "dev": "yarn relay && yarn dev:raw",
-    "dev:raw": "API_ENDPOINT=$npm_package_config_API_ENDPOINT node --icu-data-dir=`yarn -s run node-full-icu-path` server/index.js",
-    "relay": "relay-compiler --src . --schema ../api/schema.graphql",
+    "dev:raw": "node --icu-data-dir=`yarn -s run node-full-icu-path` server/index.js",
+    "relay": "relay-compiler --src . --schema /api/schema.graphql",
     "relay:clean": "rimraf $TMPDIR/* && rimraf ./**/__generated__/*.graphql.js"
   }
 }
